@@ -1,18 +1,23 @@
 # knowledge-brief
 
-按关键词和探索说明生成每日知识简报的 Skill。每天聚焦一个问题，保存全文、来源和学习记录；生成前对照全部历史，避免实质重复。
+结合配置关键词、本次提示词和历史简报清单查询资料，确定有实质新增的主题，按模板生成知识简报并保存。
 
-实现位于 [skills/knowledge-brief](skills/knowledge-brief/SKILL.md)，独立包含指令、默认模板、配置示例和存储脚本，不依赖其他方案文档。需要 Node.js 22 或更高版本，无第三方运行依赖。
+Skill 直接维护在 [.agents/skills/knowledge-brief](.agents/skills/knowledge-brief/SKILL.md)，当前项目使用这一份文件。由宿主 Agent 使用现有工具完成，无额外运行依赖。
 
-设计方案保存在 [docs/知识简报Skill设计方案.md](docs/知识简报Skill设计方案.md)。
+设计说明见 [docs/知识简报Skill设计方案.md](docs/知识简报Skill设计方案.md)，[流程图](docs/assets/knowledge-brief-flow.svg)展示完整流程。
 
 ## 使用
 
-1. 将 `skills/knowledge-brief` 整个目录放入运行宿主支持的 Skill 目录。
-2. 告诉 Agent：“使用 knowledge-brief，配置我的简报，关键词是……，说明是……”。初始化会创建六项配置、可编辑模板和历史目录。
-3. 后续请求：“按这份配置生成今天的简报”，并提供配置文件绝对路径。也可查询历史或反馈某篇太浅、太深、已掌握、想继续。
+在宿主中拉起 `knowledge-brief`，附上配置文件路径和本次提示词，例如：
 
-配置只保留：
+```text
+使用 knowledge-brief，配置文件是 ./knowledge-brief.config.json。
+今天重点解释方法的适用边界，结合历史选一个没有重复讲过的问题。
+```
+
+首次配置可直接告诉 Agent 想探索的关键词和说明，委托它创建配置与模板；没有初始化命令。也可手动复制 [配置样例](.agents/skills/knowledge-brief/assets/config.example.json) 和 [默认模板](.agents/skills/knowledge-brief/references/brief-template.md) 到项目根目录并编辑。
+
+配置只保留六项，路径相对于配置文件所在目录：
 
 ```json
 {
@@ -20,34 +25,38 @@
   "description": "关注什么、希望解决什么问题",
   "style": "准确、简洁、通俗易懂，用具体例子解释",
   "source": "优先原始研究、权威资料和可信的一手实践，关键结论追溯原始来源",
-  "output_dir": "./briefs",
+  "output_dir": "./src",
   "template": "./brief-template.md"
 }
 ```
 
-输出目录与模板路径相对于配置文件解析。仅输入关键词也能初始化，其他字段使用默认值。逻辑、流程与交互使用图表，比较使用表格；来源和图表附件随简报归档。
+配置给出长期范围，本次提示词给出当前重点；不自动改写配置。Skill 先检索历史清单，必要时读相近原文，再查询资料和确定主题，默认不逐次询问。需要先看选题时，在本次提示词中说明。
 
-需要手动初始化时，先创建配置文件，再执行：
+## 输出与历史
 
-```powershell
-node skills/knowledge-brief/scripts/brief-store.mjs init --config "D:\my-briefs\knowledge-brief.config.json"
+```text
+src/
+├── list.json
+└── confidence-interval-coverage/
+    ├── brief.md
+    └── images/                      # 有图片时创建
 ```
 
-完整命令和草稿格式见 [存储契约](skills/knowledge-brief/references/store-contract.md)。存储 CLI 负责确定性文件操作，检索、真实阅读、写作和语义去重由使用 Skill 的 Agent 执行。
+每篇使用具体的英文主题目录名；日期、结论、实际来源和必要的旧文链接保留在正文中。逻辑、流程和交互用图表，方案比较用表格；图片及图表源文件保存在 `images/`。
 
-## 历史与运行约束
+`src/list.json` 是唯一历史清单，每条仅含：
 
-同一输出目录每天北京时间只发布一篇；重复调用返回已有简报。不同配置共用目录时也共用这一约束。更换同一份简报的保存位置时需连同完整历史迁移。
-
-脚本校验正文和附件完整性，历史损坏时停止。语义去重依赖模型对照真实历史，不能承诺永久零误判；没有合格题目时记录失败。中断的生成锁不自动超时抢占，确认原调用结束后按存储契约恢复。
-
-每日触发由外部调度器完成；启用前验证宿主、联网、同一历史目录和结果展示。本仓库不自动创建调度任务，也不提交或同步用户历史。
-
-## 验证
-
-```powershell
-npm run check
-npm test
+```json
+{
+  "date": "2026-11-06",
+  "topic": "95% 置信区间如何理解？",
+  "summary": "用 1–2 句话概括本篇的核心认识或方法。",
+  "output_dir": "confidence-interval-coverage"
+}
 ```
 
-测试通过真实 CLI 子进程检查配置、同日复用、并发、全历史比较约束、损坏检测、附件与恢复。合成测试资料不代表真实来源阅读或自动语义判断已被证明。独立前向试运行的样稿保存在本地 `.validation/`，该目录不纳入 Git。
+清单最外层为数组，条目中的 `output_dir` 相对于 `src/`，原文为该目录下的 `brief.md`。先保存正文和图片，再保留旧条目追加清单，回读核对后返回文件链接。已有文件不覆盖；同一天可以生成不同主题。
+
+本项目的 [src/list.json](src/list.json) 已建立，初始为空；正式简报按你提供的配置生成。
+
+来源不足或无法确认新意时换题或说明原因；清单损坏时停止，不清空历史。语义去重依赖 Agent 对照历史判断，每日自动触发由宿主调度。

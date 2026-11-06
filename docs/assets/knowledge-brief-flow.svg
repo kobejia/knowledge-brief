@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+<title id="title">知识简报 Skill 精简流程</title>
+<desc id="desc">拉起 Skill，读取配置、本次提示词和 src/list.json 历史清单，必要时读取相近简报原文。查证后确定新主题，保存 Markdown 与图片到 src 的英文主题目录，追加日期、主题、核心内容和输出目录到清单。</desc>
+<defs>
+<marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,3.5 L0,7 Z" fill="#2563eb"/></marker>
+<marker id="arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c"/></marker>
+</defs>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#0f172a} .muted{fill:#64748b}</style>
+<rect width="1200" height="1600" fill="#ffffff"/>
+<text x="60" y="55" text-anchor="start" font-size="30" font-weight="700" style="fill:#0f172a">知识简报 Skill · 精简流程</text>
+<text x="60" y="88" text-anchor="start" font-size="17" font-weight="400" style="fill:#64748b">当前实现｜配置 + 本次提示词 + 历史清单 → 查证选题 → 保存并更新清单</text>
+<path d="M600,176 V208" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+<path d="M230,208 H970" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+<path d="M230,208 V240" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M230,340 V380" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+<path d="M600,208 V240" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M600,340 V380" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+<path d="M970,208 V240" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M970,340 V380" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+<path d="M230,380 H970" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+<path d="M600,380 V416" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M600,496 V552" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M600,632 V672" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M780,736 H1072 V592 H770" fill="none" stroke="#ea580c" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-orange)"/>
+<path d="M600,800 V856" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M600,928 V976" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M600,1056 V1112" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M600,1200 V1248" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<path d="M600,1336 V1384" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<rect x="450" y="112" width="300" height="64" rx="32" fill="#0f172a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="600" y="153" text-anchor="middle" font-size="21" font-weight="700" style="fill:#ffffff">/xxx 拉起 Skill</text>
+<path d="M80,240 H360 L380,260 V340 H80 Z" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<path d="M360,240 V260 H380" fill="none" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="230" y="276" text-anchor="middle" font-size="21" font-weight="700" style="fill:#0f172a">配置文件</text>
+<text x="230" y="306" text-anchor="middle" font-size="14" font-weight="400" style="fill:#475569">关键词与说明 · style · source</text>
+<text x="230" y="328" text-anchor="middle" font-size="14" font-weight="400" style="fill:#475569">输出根目录 src · 简报模板</text>
+<polygon points="466,240 750,240 734,340 450,340" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5"/>
+<text x="600" y="278" text-anchor="middle" font-size="21" font-weight="700" style="fill:#0f172a">本次提示词</text>
+<text x="600" y="311" text-anchor="middle" font-size="14" font-weight="400" style="fill:#475569">本次重点、问题、角度或深度</text>
+<path d="M820,240 H1100 L1120,260 V340 H820 Z" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+<path d="M1100,240 V260 H1120" fill="none" stroke="#6ee7b7" stroke-width="1.5"/>
+<text x="970" y="278" text-anchor="middle" font-size="21" font-weight="700" style="fill:#0f172a">历史简报清单</text>
+<text x="970" y="306" text-anchor="middle" font-size="15" font-weight="400" style="fill:#475569">src/list.json</text>
+<text x="970" y="328" text-anchor="middle" font-size="13" font-weight="400" style="fill:#475569">日期 · 主题 · 1–2 句摘要 · 输出目录</text>
+<rect x="430" y="416" width="340" height="80" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="600" y="449" text-anchor="middle" font-size="21" font-weight="700" style="fill:#0f172a">结合需求与历史选题</text>
+<text x="600" y="477" text-anchor="middle" font-size="14" font-weight="400" style="fill:#475569">先检索清单，相近时读取简报原文</text>
+<rect x="430" y="552" width="340" height="80" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="600" y="585" text-anchor="middle" font-size="21" font-weight="700" style="fill:#0f172a">查询与阅读资料</text>
+<text x="600" y="613" text-anchor="middle" font-size="15" font-weight="400" style="fill:#475569">遵循 source · 实际阅读并核验</text>
+<polygon points="600,672 780,736 600,800 420,736" fill="#fffbeb" stroke="#fbbf24" stroke-width="1.5"/>
+<text x="600" y="729" text-anchor="middle" font-size="18" font-weight="700" style="fill:#0f172a">资料可靠</text>
+<text x="600" y="754" text-anchor="middle" font-size="18" font-weight="700" style="fill:#0f172a">且有实质新增？</text>
+<text x="923" y="718" text-anchor="middle" font-size="16" font-weight="600" style="fill:#c2410c">否：换题 / 补充检索</text>
+<text x="620" y="835" text-anchor="start" font-size="16" font-weight="600" style="fill:#2563eb">是</text>
+<text x="940" y="784" text-anchor="middle" font-size="15" font-weight="400" style="fill:#64748b">仍无合格资料时</text>
+<text x="940" y="810" text-anchor="middle" font-size="15" font-weight="400" style="fill:#64748b">说明原因，结束本次生成</text>
+<rect x="430" y="856" width="340" height="72" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="600" y="886" text-anchor="middle" font-size="21" font-weight="700" style="fill:#0f172a">确定主题</text>
+<text x="600" y="914" text-anchor="middle" font-size="14" font-weight="400" style="fill:#475569">由 Skill 确定，默认不逐次询问用户</text>
+<rect x="430" y="976" width="340" height="80" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="600" y="1008" text-anchor="middle" font-size="21" font-weight="700" style="fill:#0f172a">生成知识简报</text>
+<text x="600" y="1036" text-anchor="middle" font-size="14" font-weight="400" style="fill:#475569">按模板与风格 · 逻辑 / 流程用图表</text>
+<polygon points="420,1112 800,1112 780,1200 400,1200" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+<text x="600" y="1146" text-anchor="middle" font-size="21" font-weight="700" style="fill:#0f172a">保存简报与图片</text>
+<text x="600" y="1175" text-anchor="middle" font-size="14" font-weight="400" style="fill:#475569">src / 主题英文 / brief.md + images/</text>
+<rect x="430" y="1248" width="340" height="88" rx="14" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+<text x="600" y="1282" text-anchor="middle" font-size="21" font-weight="700" style="fill:#0f172a">更新 src/list.json</text>
+<text x="600" y="1312" text-anchor="middle" font-size="14" font-weight="400" style="fill:#475569">追加日期、主题、核心内容和输出目录</text>
+<rect x="450" y="1384" width="300" height="64" rx="32" fill="#0f172a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="600" y="1425" text-anchor="middle" font-size="20" font-weight="700" style="fill:#ffffff">返回简报与清单链接</text>
+<rect x="80" y="1480" width="1040" height="50" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="600" y="1512" text-anchor="middle" font-size="17" font-weight="400" style="fill:#475569">下一次先检索 list.json，再按 output_dir 读取原文；历史不覆盖。</text>
+<path d="M80,1570 H125" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<text x="138" y="1576" text-anchor="start" font-size="15" font-weight="400" style="fill:#64748b">主流程</text>
+<path d="M270,1570 H315" fill="none" stroke="#ea580c" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-orange)"/>
+<text x="328" y="1576" text-anchor="start" font-size="15" font-weight="400" style="fill:#64748b">换题与补证</text>
+<text x="1120" y="1576" text-anchor="end" font-size="15" font-weight="400" style="fill:#64748b">提示词与文件驱动</text>
+</svg>
