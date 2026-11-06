@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "date": "2026-11-06",
+    "topic": "AI 编码到底省了多少时间？先把等待、审查和返工算清楚",
+    "summary": "结合 METR 两次研究，区分主观提速、真实投入与选择偏差；提出按相同验收标准记录人工时间、交付耗时和运行成本，并借助 Harness 留存完成证据的方法。",
+    "output_dir": "ai-coding-productivity-measurement"
+  }
+]
