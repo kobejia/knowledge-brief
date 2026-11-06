@@ -23,7 +23,7 @@ Skill 直接维护在 [.agents/skills/knowledge-brief](.agents/skills/knowledge-
 {
   "keywords": ["你想探索的关键词"],
   "description": "关注什么、希望解决什么问题",
-  "style": "准确、简洁、通俗易懂，用具体例子解释",
+  "style": "准确、简洁、通俗易懂，重点突出",
   "source": "优先原始研究、权威资料和可信的一手实践，关键结论追溯原始来源",
   "output_dir": "./src",
   "template": "./brief-template.md"
@@ -31,6 +31,8 @@ Skill 直接维护在 [.agents/skills/knowledge-brief](.agents/skills/knowledge-
 ```
 
 配置给出长期范围，本次提示词给出当前重点；不自动改写配置。Skill 先检索历史清单，必要时读相近原文，再查询资料和确定主题，默认不逐次询问。需要先看选题时，在本次提示词中说明。
+
+Skill 会沿资料线索主动探索和调整选题。模板只是写作框架，可按主题自由组织；例子、练习和小标题按需选择。重要依据和适用条件贴近相关结论说明，不设置固定的“证据与边界”栏目。
 
 ## 输出与历史
 

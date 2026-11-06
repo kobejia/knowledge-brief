@@ -1,11 +1,10 @@
 {
   "keywords": [
-    "统计学",
-    "数据分析",
-    "实验设计"
+    "AI，claude-code, chatgpt,模型能力",
+    "AI应用和落地，Vibe Coding，Harness"
   ],
-  "description": "关注统计方法的原理、实际用法和常见误区，每天理解一个具体问题及其适用边界。",
-  "style": "准确、简洁、通俗易懂，用具体例子解释，区分事实、观点与推断。",
+  "description": "",
+  "style": "准确、简洁、专业；杜绝废话文学",
   "source": "优先原始研究、权威机构资料和可信的一手实践，关键结论追溯原始资料，排除纯营销内容。",
   "output_dir": "./src",
   "template": "./.agents/skills/knowledge-brief/references/brief-template.md"
