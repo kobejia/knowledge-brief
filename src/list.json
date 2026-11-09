@@ -16,5 +16,11 @@
     "topic": "上下文装得下，为什么 Agent 仍会漏掉关键信息？",
     "summary": "区分上下文容量与信息利用能力，结合位置效应和长输入研究，说明全文输入、按需读取与摘要交接的取舍；保留可追溯依据和未决状态，并用实际任务验证质量与成本。",
     "output_dir": "agent-context-selection"
+  },
+  {
+    "date": "2026-11-09",
+    "topic": "工具越多，Agent 为什么反而更难完成任务？",
+    "summary": "结合 SWE-agent 的接口实验与 Anthropic 实践，区分选工具、填参数和读反馈的失败；从真实调用记录提出最小接口调整，并用任务结果与回归验证收益。",
+    "output_dir": "agent-tool-interface-design"
   }
 ]
