@@ -22,5 +22,11 @@
     "topic": "工具越多，Agent 为什么反而更难完成任务？",
     "summary": "结合 SWE-agent 的接口实验与 Anthropic 实践，区分选工具、填参数和读反馈的失败；从真实调用记录提出最小接口调整，并用任务结果与回归验证收益。",
     "output_dir": "agent-tool-interface-design"
+  },
+  {
+    "date": "2026-11-10",
+    "topic": "多 Agent 的收益，取决于任务能否真正并行",
+    "summary": "结合并行研究系统实践和 260 个配置的受控研究，说明任务可拆分性、共享状态与协调成本怎样影响多 Agent 收益；先建立单 Agent 基线，再按统一预算口径验证分工价值。",
+    "output_dir": "multi-agent-task-decomposability"
   }
 ]
