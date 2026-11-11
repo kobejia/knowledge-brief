@@ -28,5 +28,11 @@
     "topic": "多 Agent 的收益，取决于任务能否真正并行",
     "summary": "结合并行研究系统实践和 260 个配置的受控研究，说明任务可拆分性、共享状态与协调成本怎样影响多 Agent 收益；先建立单 Agent 基线，再按统一预算口径验证分工价值。",
     "output_dir": "multi-agent-task-decomposability"
+  },
+  {
+    "date": "2026-11-11",
+    "topic": "Agent 写入超时后，怎样安全重试？",
+    "summary": "将写入超时视为结果未知，通过持久化幂等键、状态查询及原参数重试恢复同一次操作。用响应丢失和进程重启的场景检查重复写入。",
+    "output_dir": "agent-write-idempotent-retry"
   }
 ]

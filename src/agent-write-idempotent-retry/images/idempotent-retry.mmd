@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant A as Agent 工作流
+    participant S as 工单服务
+    A->>A: 保存操作标识 K 与创建参数
+    A->>S: 使用 K 提交创建请求
+    S->>S: 记录 K 与工单创建结果
+    S--xA: 响应丢失，调用方超时
+    A->>S: 在契约有效期内使用 K 和原参数重试
+    S-->>A: 返回原操作关联的工单
