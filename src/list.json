@@ -34,5 +34,11 @@
     "topic": "Agent 写入超时后，怎样安全重试？",
     "summary": "将写入超时视为结果未知，通过持久化幂等键、状态查询及原参数重试恢复同一次操作。用响应丢失和进程重启的场景检查重复写入。",
     "output_dir": "agent-write-idempotent-retry"
+  },
+  {
+    "date": "2026-11-12",
+    "topic": "Agent 读到外部指令时，谁决定它能做什么？",
+    "summary": "结合 AgentDojo 说明间接提示注入的触发条件，以及运行时如何限制工具和校验动作参数。用正常样本和注入样本同时核对任务质量与实际副作用。",
+    "output_dir": "agent-indirect-prompt-injection"
   }
 ]
