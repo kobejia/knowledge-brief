@@ -46,5 +46,11 @@
     "topic": "模型路由该在调用前选模型，还是在看到答案后升级？",
     "summary": "对照 RouteLLM 的调用前路由与 FrugalGPT 的结果驱动级联，计算升级率如何影响平均成本，并用分任务通过率、漏升级比例与 P95 延迟比较交付效果。",
     "output_dir": "model-routing-and-cascade"
+  },
+  {
+    "date": "2026-11-14",
+    "topic": "AI 补丁测试全绿，怎样确认用例能抓住缺陷？",
+    "summary": "用原版与补丁的同一行为测试核对缺陷修复，保留既有回归结果。对关键边界引入错误变体，验证断言能检出真实行为差异。",
+    "output_dir": "ai-patch-test-evidence"
   }
 ]
