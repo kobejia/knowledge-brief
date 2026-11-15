@@ -52,5 +52,11 @@
     "topic": "AI 补丁测试全绿，怎样确认用例能抓住缺陷？",
     "summary": "用原版与补丁的同一行为测试核对缺陷修复，保留既有回归结果。对关键边界引入错误变体，验证断言能检出真实行为差异。",
     "output_dir": "ai-patch-test-evidence"
+  },
+  {
+    "date": "2026-11-15",
+    "topic": "Agent 找回了旧规则，怎样判断哪一条仍然有效？",
+    "summary": "结合 LongMemEval 与双时态历史，区分规则生效时间和系统记录时间，按项目、环境与来源核对适用版本，并用追溯更正等情形验收。",
+    "output_dir": "agent-memory-freshness"
   }
 ]
