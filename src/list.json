@@ -64,5 +64,11 @@
     "topic": "JSON 通过了 Schema 校验，为什么工单仍会分错级？",
     "summary": "结合 JSONSchemaBench 与 JSON Schema 规范，区分响应解析、结构约束和业务验收。用格式合规但分级错误的工单检验原文证据与业务规则。",
     "output_dir": "structured-output-business-validation"
+  },
+  {
+    "date": "2026-11-17",
+    "topic": "AI 回答附了链接，怎样检查引用真的支持结论？",
+    "summary": "结合 ALCE 与 FActScore，将复合结论拆成可独立核验的主张，检查所引原文是否完整支持。用故障摘要示例区分引用覆盖、引用精确和必答信息覆盖。",
+    "output_dir": "ai-citation-verification"
   }
 ]
