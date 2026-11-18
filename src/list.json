@@ -70,5 +70,11 @@
     "topic": "AI 回答附了链接，怎样检查引用真的支持结论？",
     "summary": "结合 ALCE 与 FActScore，将复合结论拆成可独立核验的主张，检查所引原文是否完整支持。用故障摘要示例区分引用覆盖、引用精确和必答信息覆盖。",
     "output_dir": "ai-citation-verification"
+  },
+  {
+    "date": "2026-11-18",
+    "topic": "推测解码为什么能加速，还能保持目标模型的输出分布？",
+    "summary": "用接受概率和拒绝后的正残差补采样说明推测解码怎样保持目标分布。结合原始论文的硬件与任务条件，解释草稿长度、接受情况和实测延迟怎样影响加速收益。",
+    "output_dir": "speculative-decoding-distribution"
   }
 ]
