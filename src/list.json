@@ -76,5 +76,11 @@
     "topic": "推测解码为什么能加速，还能保持目标模型的输出分布？",
     "summary": "用接受概率和拒绝后的正残差补采样说明推测解码怎样保持目标分布。结合原始论文的硬件与任务条件，解释草稿长度、接受情况和实测延迟怎样影响加速收益。",
     "output_dir": "speculative-decoding-distribution"
+  },
+  {
+    "date": "2026-11-19",
+    "topic": "KV 缓存占多少显存，为什么要看 KV 头数？",
+    "summary": "从缓存张量维度推导显存容量，用 GQA 的 KV 头数及上下文、并发算例说明容量增长。结合 PagedAttention 说明分页减少预留与碎片浪费，并明确估算的适用条件。",
+    "output_dir": "kv-cache-capacity-and-gqa"
   }
 ]
