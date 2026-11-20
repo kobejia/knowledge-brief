@@ -82,5 +82,11 @@
     "topic": "KV 缓存占多少显存，为什么要看 KV 头数？",
     "summary": "从缓存张量维度推导显存容量，用 GQA 的 KV 头数及上下文、并发算例说明容量增长。结合 PagedAttention 说明分页减少预留与碎片浪费，并明确估算的适用条件。",
     "output_dir": "kv-cache-capacity-and-gqa"
+  },
+  {
+    "date": "2026-11-20",
+    "topic": "让模型比较两个答案，为什么要交换顺序再评一次？",
+    "summary": "结合 FairEval 与 MT-Bench 原始研究，说明答案位置怎样影响模型裁判，并将两次换序结果映射回答案身份。保留不一致样本，结合重复评审与人工标注核对评测稳定性和准确性。",
+    "output_dir": "llm-judge-order-bias"
   }
 ]
